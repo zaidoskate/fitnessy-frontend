@@ -22,8 +22,8 @@ export default function RecordsSection({
   onDeleteRecord,
   onToggleOfficial,
 }) {
-  const maxVisiblePages = Math.max(totalPages, 5);
-  const pagesArray = Array.from({ length: maxVisiblePages }, (_, idx) => idx + 1);
+  const safeTotalPages = Math.max(1, Number(totalPages) || 1);
+  const pagesArray = Array.from({ length: safeTotalPages }, (_, idx) => idx + 1);
 
   return (
     <div id="records" className="lg:col-span-7 flex flex-col gap-space-md">
@@ -232,8 +232,8 @@ export default function RecordsSection({
         })}
         <button
           type="button"
-          onClick={() => onPageChange(page + 1)}
-          disabled={page >= Math.max(totalPages, 1)}
+          onClick={() => onPageChange(Math.min(safeTotalPages, page + 1))}
+          disabled={page >= safeTotalPages}
           className="w-9 h-9 bg-primary-container text-surface-container-lowest font-label-md flex items-center justify-center rounded-DEFAULT hover:bg-surface-tint disabled:opacity-50"
         >
           &gt;

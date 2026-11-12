@@ -194,114 +194,110 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
               </div>
             </div>
             <form className="flex flex-col gap-space-lg" onSubmit={handleRegisterSubmit}>
-              <div className="grid grid-cols-1 gap-x-gutter-desktop gap-y-space-md">
-                <div className="flex flex-col gap-space-md">
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-name"
-                      placeholder="Nombre"
-                      required
-                      type="text"
-                      value={regData.nombre}
-                      onChange={(e) => setRegData({ ...regData, nombre: e.target.value })}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-pat"
-                      placeholder="Apellido Paterno"
-                      required
-                      type="text"
-                      value={regData.apellido_paterno}
-                      onChange={(e) =>
-                        setRegData({ ...regData, apellido_paterno: e.target.value })
-                      }
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-email"
-                      placeholder="Correo electrónico"
-                      required
-                      type="email"
-                      value={regData.correo}
-                      onChange={(e) => setRegData({ ...regData, correo: e.target.value })}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-data-metric px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-age"
-                      max="99"
-                      min="14"
-                      placeholder="Edad (años cumplidos)"
-                      required
-                      type="number"
-                      value={regData.edad}
-                      onChange={(e) => setRegData({ ...regData, edad: e.target.value })}
-                    />
-                  </div>
+              <div className="flex flex-col gap-space-md">
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-name"
+                    placeholder="Nombre"
+                    required
+                    type="text"
+                    value={regData.nombre}
+                    onChange={(e) => setRegData({ ...regData, nombre: e.target.value })}
+                  />
                 </div>
-                <div className="flex flex-col gap-space-md">
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-mat"
-                      placeholder="Apellido Materno"
-                      type="text"
-                      value={regData.apellido_materno}
-                      onChange={(e) =>
-                        setRegData({ ...regData, apellido_materno: e.target.value })
-                      }
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-password"
-                      placeholder="Contraseña (mínimo 8 caracteres)"
-                      required
-                      type="password"
-                      value={regData.password}
-                      onChange={(e) => setRegData({ ...regData, password: e.target.value })}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <input
-                      className="w-full bg-tertiary-container text-surface-container-highest font-data-metric px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-weight"
-                      placeholder="Peso corporal oficial (kg)"
-                      required
-                      step="0.1"
-                      type="number"
-                      value={regData.peso_corporal}
-                      onChange={(e) =>
-                        setRegData({ ...regData, peso_corporal: e.target.value })
-                      }
-                    />
-                  </div>
-                  <div className="flex flex-col gap-space-xs">
-                    <select
-                      className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
-                      id="reg-country"
-                      required
-                      value={regData.pais}
-                      onChange={(e) => setRegData({ ...regData, pais: e.target.value })}
-                    >
-                      <option disabled value="">
-                        Selecciona País / Federación
-                      </option>
-                      <option value="ES">España (AEP / FEPC)</option>
-                      <option value="MX">México (FMP)</option>
-                      <option value="AR">Argentina (FALPO)</option>
-                      <option value="CO">Colombia (FCK)</option>
-                      <option value="CL">Chile (FECHIPO)</option>
-                      <option value="OT">Otra Federación Internacional</option>
-                    </select>
-                  </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-pat"
+                    placeholder="Apellido Paterno"
+                    required
+                    type="text"
+                    value={regData.apellido_paterno}
+                    onChange={(e) =>
+                      setRegData({ ...regData, apellido_paterno: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-mat"
+                    placeholder="Apellido Materno"
+                    type="text"
+                    value={regData.apellido_materno}
+                    onChange={(e) =>
+                      setRegData({ ...regData, apellido_materno: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-data-metric px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-age"
+                    max="99"
+                    min="14"
+                    placeholder="Edad (años cumplidos)"
+                    required
+                    type="number"
+                    value={regData.edad}
+                    onChange={(e) => setRegData({ ...regData, edad: e.target.value })}
+                  />
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-data-metric px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-weight"
+                    placeholder="Peso corporal oficial (kg)"
+                    required
+                    step="0.1"
+                    type="number"
+                    value={regData.peso_corporal}
+                    onChange={(e) =>
+                      setRegData({ ...regData, peso_corporal: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <select
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-country"
+                    required
+                    value={regData.pais}
+                    onChange={(e) => setRegData({ ...regData, pais: e.target.value })}
+                  >
+                    <option disabled value="">
+                      Selecciona País / Federación
+                    </option>
+                    <option value="ES">España (AEP / FEPC)</option>
+                    <option value="MX">México (FMP)</option>
+                    <option value="AR">Argentina (FALPO)</option>
+                    <option value="CO">Colombia (FCK)</option>
+                    <option value="CL">Chile (FECHIPO)</option>
+                    <option value="OT">Otra Federación Internacional</option>
+                  </select>
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-email"
+                    placeholder="Correo electrónico"
+                    required
+                    type="email"
+                    value={regData.correo}
+                    onChange={(e) => setRegData({ ...regData, correo: e.target.value })}
+                  />
+                </div>
+                <div className="flex flex-col gap-space-xs">
+                  <input
+                    className="w-full bg-tertiary-container text-surface-container-highest font-body-md px-space-md py-space-sm rounded-DEFAULT focus:outline-none focus:bg-tertiary transition-colors"
+                    id="reg-password"
+                    placeholder="Contraseña (mínimo 8 caracteres)"
+                    required
+                    type="password"
+                    value={regData.password}
+                    onChange={(e) => setRegData({ ...regData, password: e.target.value })}
+                  />
                 </div>
               </div>
               <div className="flex items-center justify-center pt-space-xs">

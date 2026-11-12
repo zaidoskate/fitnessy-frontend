@@ -1,4 +1,4 @@
-export default function SplitBanner({ stats, onNormativaClick }) {
+export default function SplitBanner({ stats }) {
   const totalRecords = Number(stats?.total_records_oficiales ?? 1420).toLocaleString('en-US');
   const totalAthletes = Number(stats?.total_atletas ?? 850).toLocaleString('en-US');
 
@@ -14,15 +14,6 @@ export default function SplitBanner({ stats, onNormativaClick }) {
         <p className="font-body-md text-body-md text-surface-variant">
           Todos los envíos son revisados minuciosamente cuadro por cuadro por jueces certificados bajo normativa reglamentaria.
         </p>
-        <div>
-          <button
-            type="button"
-            onClick={onNormativaClick}
-            className="bg-secondary-fixed text-primary-container font-headline-sm text-label-md font-bold uppercase px-space-lg py-space-sm rounded-DEFAULT hover:bg-tertiary-fixed transition-colors"
-          >
-            Ver Normativa
-          </button>
-        </div>
       </div>
 
       <div className="bg-secondary-fixed text-primary-container px-margin md:px-margin-desktop py-space-xl flex items-center justify-around">

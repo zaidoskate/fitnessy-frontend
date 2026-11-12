@@ -272,10 +272,7 @@ function DashboardContent() {
             </div>
           </section>
 
-          <SplitBanner
-            stats={stats}
-            onNormativaClick={() => handleNavigate('top-3')}
-          />
+          <SplitBanner stats={stats} />
 
           <TopPodium topRecords={topRecords} />
         </div>
