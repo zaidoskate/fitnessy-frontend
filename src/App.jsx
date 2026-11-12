@@ -18,7 +18,7 @@ function DashboardContent() {
   const [categories, setCategories] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'pending' | 'official'
+  const [statusFilter, setStatusFilter] = useState('all');
   const [records, setRecords] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -29,7 +29,6 @@ function DashboardContent() {
   const [topRecords, setTopRecords] = useState([]);
   const [feedbackError, setFeedbackError] = useState('');
 
-  // Modales
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authModalTab, setAuthModalTab] = useState('login');
   const [recordModalOpen, setRecordModalOpen] = useState(false);
@@ -80,7 +79,6 @@ function DashboardContent() {
     loadRecords(selectedCategoryId, page, searchQuery, statusFilter);
   }, [selectedCategoryId, page, searchQuery, statusFilter, loadRecords]);
 
-  // Si cierra sesión como admin, restablecemos el filtro de estatus
   useEffect(() => {
     if (!isAdmin && statusFilter !== 'all') {
       setStatusFilter('all');
@@ -218,7 +216,6 @@ function DashboardContent() {
 
       <main className="w-full pt-16 bg-surface min-h-[calc(100vh-80px)] flex-1">
         <div className="flex flex-col w-full bg-surface-variant font-body-md text-on-surface">
-          {/* 1. HERO BANNER FULL-WIDTH */}
           <HeroBanner
             isAdmin={isAdmin}
             isAuthenticated={isAuthenticated}
@@ -230,7 +227,6 @@ function DashboardContent() {
             }}
           />
 
-          {/* 2. MAIN BODY (2 ASYMMETRIC COLUMNS) */}
           <section className="w-full max-w-[1440px] mx-auto px-margin md:px-margin-desktop py-space-xl">
             {feedbackError && (
               <div className="mb-space-md p-space-sm bg-primary-container text-tertiary-fixed font-label-md text-label-md flex items-center justify-between rounded-DEFAULT">
@@ -276,13 +272,11 @@ function DashboardContent() {
             </div>
           </section>
 
-          {/* 3. SPLIT INTERMEDIATE BANNER 50% / 50% NO RADIUS / NO GAP */}
           <SplitBanner
             stats={stats}
             onNormativaClick={() => handleNavigate('top-3')}
           />
 
-          {/* 4. BOTTOM SECTION: TOP 3 MUNDIAL (PODIUM 3 COLUMNS) */}
           <TopPodium topRecords={topRecords} />
         </div>
       </main>

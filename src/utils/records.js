@@ -45,9 +45,6 @@ const CATEGORY_CODES = {
   'press militar': 'OHP',
 };
 
-/**
- * Filtra una lista de récords por ID de categoría.
- */
 export function filterRecordsByCategory(records = [], categoryId = null) {
   if (!Array.isArray(records)) return [];
   if (categoryId === null || categoryId === undefined || categoryId === '') {
@@ -57,9 +54,6 @@ export function filterRecordsByCategory(records = [], categoryId = null) {
   return records.filter((rec) => Number(rec.id_categoria) === targetId);
 }
 
-/**
- * Ordena récords de mayor a menor peso levantado.
- */
 export function sortRecordsByWeightDesc(records = []) {
   if (!Array.isArray(records)) return [];
   return [...records].sort((a, b) => {
@@ -69,9 +63,6 @@ export function sortRecordsByWeightDesc(records = []) {
   });
 }
 
-/**
- * Formatea el peso en kg (sin decimales innecesarios si es entero).
- */
 export function formatWeightKg(weight) {
   const num = Number(weight);
   if (Number.isNaN(num)) return '0 kg';
@@ -79,9 +70,6 @@ export function formatWeightKg(weight) {
   return `${formatted} kg`;
 }
 
-/**
- * Formatea una fecha ISO (YYYY-MM-DD) al estilo "14 Oct 2024".
- */
 export function formatShortDate(dateInput) {
   if (!dateInput) return 'N/A';
   const raw = String(dateInput).split('T')[0];
@@ -99,9 +87,6 @@ export function formatShortDate(dateInput) {
   return `${day} ${monthName} ${year}`;
 }
 
-/**
- * Obtiene el código corto de país (ej. MX, ES, AR).
- */
 export function getCountryCode(pais = '') {
   if (!pais) return 'INT';
   const clean = String(pais).trim();
@@ -110,18 +95,12 @@ export function getCountryCode(pais = '') {
   return clean.slice(0, 2).toUpperCase();
 }
 
-/**
- * Obtiene etiqueta de país para el podio (ej. "MX (México)").
- */
 export function getCountryDisplay(pais = '') {
   const code = getCountryCode(pais);
   if (COUNTRY_LABELS[code]) return COUNTRY_LABELS[code];
   return `${code} (${pais})`;
 }
 
-/**
- * Obtiene las siglas de 2 letras de una categoría (SQ, BP, DL, PU, DP).
- */
 export function getCategoryAbbreviation(nombre = '') {
   if (!nombre) return 'EX';
   const clean = String(nombre).trim().toLowerCase();
@@ -134,9 +113,6 @@ export function getCategoryAbbreviation(nombre = '') {
   return clean.slice(0, 2).toUpperCase();
 }
 
-/**
- * Calcula un coeficiente estimado de fuerza relativa (estilo Wilks/DOTS simplificado).
- */
 export function calculateStrengthCoefficient(pesoLevantado, pesoCorporal = 80) {
   const lifted = Number(pesoLevantado) || 0;
   const bw = Number(pesoCorporal) > 30 ? Number(pesoCorporal) : 80;
@@ -145,9 +121,6 @@ export function calculateStrengthCoefficient(pesoLevantado, pesoCorporal = 80) {
   return coeff.toFixed(1);
 }
 
-/**
- * Genera el identificador de juez reglamentario a partir del id_record.
- */
 export function getRefereeCode(idRecord = 1) {
   const num = (Number(idRecord) || 1) * 103;
   return `REF-${String(100 + (num % 899)).padStart(3, '0')}`;

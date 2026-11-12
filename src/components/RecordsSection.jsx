@@ -43,7 +43,6 @@ export default function RecordsSection({
           )}
         </div>
 
-        {/* Buscador público de atletas / países y filtros de moderación para Admin */}
         <div className="flex flex-wrap items-center gap-space-xs">
           {isAdmin && (
             <div className="flex items-center gap-space-xs">
@@ -205,7 +204,6 @@ export default function RecordsSection({
         })
       )}
 
-      {/* Minimalist Flat Paginator */}
       <div className="flex items-center justify-start gap-space-xs pt-space-sm">
         <button
           type="button"

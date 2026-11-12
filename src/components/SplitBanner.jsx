@@ -4,7 +4,6 @@ export default function SplitBanner({ stats, onNormativaClick }) {
 
   return (
     <section className="w-full grid grid-cols-1 md:grid-cols-2">
-      {/* Left Half: Dark #0D2438 */}
       <div className="bg-primary-container text-surface-variant px-margin md:px-margin-desktop py-space-xl flex flex-col justify-center gap-space-md">
         <div className="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">
           PROCEDIMIENTO OFICIAL
@@ -26,7 +25,6 @@ export default function SplitBanner({ stats, onNormativaClick }) {
         </div>
       </div>
 
-      {/* Right Half: Solid #17B890 / #secondary-fixed */}
       <div className="bg-secondary-fixed text-primary-container px-margin md:px-margin-desktop py-space-xl flex items-center justify-around">
         <div className="flex flex-col items-start">
           <span className="font-display text-display font-bold leading-none text-primary-container">

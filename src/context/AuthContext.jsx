@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
         }
       })
       .catch(() => {
-        // Si el backend no está levantado o expiró, conservamos el usuario local si existe
+        // Si el backend no está levantado o expiro, se conserva el usuario local si es que existe
       });
   }, [token]);
 

@@ -6,11 +6,9 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
   const [activeTab, setActiveTab] = useState(initialTab);
   const [error, setError] = useState('');
 
-  // Login state
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
 
-  // Register state
   const [regData, setRegData] = useState({
     nombre: '',
     apellido_paterno: '',
@@ -124,7 +122,6 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
           </div>
         )}
 
-        {/* PANE 1: INICIAR SESIÓN */}
         {activeTab === 'login' && (
           <div className="grid grid-cols-1 gap-gutter-desktop items-start" id="pane-login">
             <div className="flex flex-col gap-space-lg w-full">
@@ -187,7 +184,6 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
           </div>
         )}
 
-        {/* PANE 2: CREAR CUENTA (REGISTRO COMPLETO DE ALTA UTILIDAD) */}
         {activeTab === 'register' && (
           <div className="flex-col gap-space-lg flex" id="pane-register">
             <div className="flex flex-col md:flex-row justify-between md:items-end gap-space-sm">
@@ -199,7 +195,6 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
             </div>
             <form className="flex flex-col gap-space-lg" onSubmit={handleRegisterSubmit}>
               <div className="grid grid-cols-1 gap-x-gutter-desktop gap-y-space-md">
-                {/* Columna 1 */}
                 <div className="flex flex-col gap-space-md">
                   <div className="flex flex-col gap-space-xs">
                     <input
@@ -250,7 +245,6 @@ export default function AuthModal({ isOpen, initialTab = 'login', onClose }) {
                     />
                   </div>
                 </div>
-                {/* Columna 2 */}
                 <div className="flex flex-col gap-space-md">
                   <div className="flex flex-col gap-space-xs">
                     <input

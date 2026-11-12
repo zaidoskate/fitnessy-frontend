@@ -45,7 +45,6 @@ export default function TopPodium({ topRecords = [] }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop items-end max-w-5xl mx-auto">
-        {/* Rank 2: Left (#0D2438) */}
         <article className="bg-primary-container text-surface-variant p-space-lg rounded-DEFAULT flex flex-col gap-space-md order-2 md:order-1">
           <div className="flex items-center justify-between pb-space-xs">
             <span className="font-label-md text-label-md font-bold text-surface-container-highest uppercase">
@@ -92,7 +91,6 @@ export default function TopPodium({ topRecords = [] }) {
           </div>
         </article>
 
-        {/* Rank 1: Center Prominent (#5EEAD4 / #tertiary-fixed) */}
         <article className="bg-tertiary-fixed text-primary-container p-space-lg rounded-DEFAULT flex flex-col gap-space-md order-1 md:order-2 md:-mt-8">
           <div className="flex items-center justify-between pb-space-xs">
             <span className="font-label-md text-label-md font-bold text-primary-container uppercase">
@@ -143,7 +141,6 @@ export default function TopPodium({ topRecords = [] }) {
           </div>
         </article>
 
-        {/* Rank 3: Right (#0D2438) */}
         <article className="bg-primary-container text-surface-variant p-space-lg rounded-DEFAULT flex flex-col gap-space-md order-3 md:order-3">
           <div className="flex items-center justify-between pb-space-xs">
             <span className="font-label-md text-label-md font-bold text-surface-container-highest uppercase">
